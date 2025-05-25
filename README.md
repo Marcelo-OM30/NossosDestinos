@@ -1,4 +1,4 @@
-# Roteiro a Dois - Lugares para Ir com o Amor
+# Nossos Destinos - Lugares para Ir com o Amor
 
 Uma simples aplicação web para listar lugares para visitar com a pessoa amada.
 Os dados são salvos no Firebase e a aplicação pode ser hospedada no GitHub Pages.
@@ -47,16 +47,18 @@ Os dados são salvos no Firebase e a aplicação pode ser hospedada no GitHub Pa
 
 ### 3. Deploy no GitHub Pages
 
-1.  Crie um repositório no GitHub.
+1.  Crie um repositório no GitHub (ex: `NossosDestinos`).
 2.  Adicione os arquivos `index.html`, `style.css`, `script.js` e `README.md` ao repositório.
     ```bash
     git init
     git add .
     git commit -m "Commit inicial"
     git branch -M main
-    git remote add origin SEU_URL_DE_REPOSITORIO_AQUI.git
+    # Substitua a URL abaixo pela URL SSH ou HTTPS do SEU repositório GitHub
+    git remote add origin git@github.com:SEU_USUARIO/SEU_REPOSITORIO.git 
     git push -u origin main
     ```
+    **Nota:** Se você já executou `git remote add origin` com uma URL incorreta, use `git remote set-url origin git@github.com:SEU_USUARIO/SEU_REPOSITORIO.git` para corrigi-la antes do `push`.
 3.  No seu repositório GitHub, vá em "Settings" > "Pages".
 4.  Em "Branch", selecione `main` (ou `master`) e a pasta `/ (root)`. Clique em "Save".
 5.  Aguarde alguns minutos. O link da sua aplicação aparecerá nesta mesma página.
