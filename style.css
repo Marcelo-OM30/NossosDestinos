@@ -103,3 +103,77 @@ button:hover {
 .list-container li button.delete-button:hover {
     background-color: #e53935;
 }
+
+/* --- Media Queries para Responsividade --- */
+
+/* Para telas menores que 768px (tablets e celulares maiores em paisagem) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px; /* Adiciona uma pequena margem nas laterais */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Para telas menores que 480px (celulares em retrato) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduz o padding do body */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        padding: 12px; /* Aumenta um pouco o padding para facilitar o toque */
+        font-size: 1em;
+    }
+
+    button {
+        padding: 12px 15px;
+        font-size: 1em;
+        width: 100%; /* Faz os botões ocuparem a largura total */
+        box-sizing: border-box; /* Garante que padding não aumente a largura total */
+    }
+    
+    #addPlaceButton {
+         margin-top: 5px; /* Pequeno espaço se os inputs e botão estiverem próximos */
+    }
+
+    .list-container li {
+        flex-direction: column; /* Empilha os itens da lista verticalmente */
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    .list-container li .description {
+        margin-left: 0;
+        margin-top: 5px; /* Espaço entre nome e descrição */
+        margin-bottom: 8px; /* Espaço antes do botão de remover */
+        word-break: break-word; /* Quebra palavras longas na descrição */
+    }
+
+    .list-container li button.delete-button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        width: auto; /* Botão de remover não precisa ocupar largura total */
+        align-self: flex-end; /* Alinha o botão de remover à direita */
+    }
+}

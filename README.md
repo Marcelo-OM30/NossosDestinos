@@ -36,7 +36,12 @@ Os dados são salvos no Firebase e a aplicação pode ser hospedada no GitHub Pa
           }
         }
         ```
-    *   **Importante:** Regras abertas (`"true"`) ou temporizadas são para desenvolvimento/teste. Para uso prolongado ou se a privacidade dos dados for crítica, você precisará configurar regras de segurança mais robustas (ex: baseadas em autenticação de usuários). Lembre-se de "Publicar" suas regras no console do Firebase.
+    *   **Importante: Persistência dos Dados e Regras de Segurança**
+        *   Os dados salvos no Firebase **são persistentes** e não sumirão enquanto o projeto Firebase e o Realtime Database existirem e as regras permitirem acesso.
+        *   Regras abertas (`"true"`) ou temporizadas (como `"now < timestamp"`) são para desenvolvimento/teste.
+        *   **Se suas regras são temporizadas (ex: `"now < 1750734000000"`), elas EXPIRARÃO na data especificada. Após a expiração, a aplicação NÃO CONSEGUIRÁ mais ler ou salvar dados até que as regras sejam atualizadas.**
+        *   Para uso prolongado, você precisará atualizar essas regras antes que expirem ou configurar regras de segurança mais robustas (ex: baseadas em autenticação de usuários).
+        *   Lembre-se de "Publicar" suas regras no console do Firebase após qualquer alteração.
 4.  Cole o objeto `firebaseConfig` copiado no arquivo `script.js` no local indicado. Certifique-se de adicionar também a `databaseURL` se estiver usando o Realtime Database e ela não estiver no `firebaseConfig` inicial.
 
 **Nota:** Para esta configuração, que usa o Firebase SDK via tags `<script>` no `index.html`, você **não** precisa rodar `npm install firebase`. O comando `npm install` é usado em projetos Node.js ou que utilizam bundlers JavaScript.
