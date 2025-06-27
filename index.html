@@ -8,6 +8,18 @@
 </head>
 <body>
     <div class="container">
+        <!-- Status de conexão -->
+        <div id="connectionStatus" class="connection-status">
+            <span id="statusIndicator">●</span>
+            <span id="statusText">Verificando conexão...</span>
+        </div>
+
+        <!-- Área de erro -->
+        <div id="errorContainer" class="error-container" style="display: none;">
+            <strong>Erro:</strong> <span id="errorMessage"></span>
+            <button id="reloadButton" onclick="location.reload()">Recarregar</button>
+        </div>
+
         <h1>Nossos Destinos ❤️</h1>
 
         <div class="form-container">
@@ -15,10 +27,12 @@
             <input type="text" id="placeName" placeholder="Digite aqui o destino">
             <input type="text" id="placeDescription" placeholder="Pequena descrição (opcional)">
             <button id="addPlaceButton">Adicionar Destino</button>
+            <button id="testButton" style="margin-left: 10px; background-color: #2196F3;">🔧 Testar Conexão</button>
         </div>
 
         <div class="list-container">
             <h2>Nossa Lista de Desejos</h2>
+            <div id="loadingIndicator" class="loading">Carregando lugares...</div>
             <ul id="placesList">
                 <!-- Lugares serão adicionados aqui pelo JavaScript -->
             </ul>
@@ -29,6 +43,8 @@
     <!-- Você pode encontrar as versões mais recentes na documentação do Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    
     <!-- Se for usar Firestore, adicione o SDK do Firestore também -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> -->
 
