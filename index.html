@@ -26,8 +26,16 @@
             <h2>Adicionar Destino</h2>
             <input type="text" id="placeName" placeholder="Digite aqui o destino">
             <input type="text" id="placeDescription" placeholder="Pequena descrição (opcional)">
+            <input type="url" id="placeLink" placeholder="Link do local (site, maps, etc.) - opcional">
+            
+            <div class="date-section">
+                <label for="plannedDate">Previsão de visita:</label>
+                <input type="text" id="plannedDate" placeholder="DD/MM/AAAA - Ex: 25/12/2025" maxlength="10">
+                <small class="date-hint">Use o formato brasileiro: dia/mês/ano</small>
+            </div>
+
             <button id="addPlaceButton">Adicionar Destino</button>
-            <button id="testButton" style="margin-left: 10px; background-color: #2196F3;">🔧 Testar Conexão</button>
+            <!-- <button id="testButton" style="margin-left: 10px; background-color: #2196F3;">🔧 Testar Conexão</button> -->
         </div>
 
         <div class="list-container">
@@ -36,6 +44,69 @@
             <ul id="placesList">
                 <!-- Lugares serão adicionados aqui pelo JavaScript -->
             </ul>
+        </div>
+    </div>
+
+    <!-- Modal para avaliação -->
+    <div id="ratingModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Avaliar Destino</h3>
+                <span class="close-modal" onclick="closeRatingModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="modalPlaceName" class="modal-place-name"></div>
+                
+                <div class="modal-field">
+                    <label for="modalReview">Como foi a experiência?</label>
+                    <textarea id="modalReview" placeholder="Conte como foi essa visita... (opcional)" rows="3"></textarea>
+                </div>
+                
+                <div class="modal-field">
+                    <div class="rating-container">
+                        <div class="rating-meter" id="modalRatingMeter">
+                            <div class="rating-scale">
+                                <div class="rating-fill" id="modalRatingFill"></div>
+                                <div class="rating-markers">
+                                    <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                                    <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                </div>
+                            </div>
+                            <div class="rating-display">
+                                <span id="modalRatingValue">5</span>/10
+                                <div id="modalRatingEmoji">😊</div>
+                            </div>
+                        </div>
+                        <input type="range" id="modalRating" min="0" max="10" value="5" style="display: none;">
+                        <div class="rating-hint">Clique ou arraste no medidor para avaliar</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeRatingModal()">Cancelar</button>
+                <button class="btn-primary" onclick="saveRating()">Salvar Avaliação</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para edição de previsão de visita -->
+    <div id="editDateModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Definir Previsão de Visita</h3>
+                <span class="close-modal" onclick="closeEditDateModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-field">
+                    <label for="modalPlannedDate">Quando pretende visitar este lugar?</label>
+                    <input type="text" id="modalPlannedDate" placeholder="DD/MM/AAAA - Ex: 25/12/2025" maxlength="10">
+                    <small class="date-hint">Use o formato brasileiro: dia/mês/ano</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeEditDateModal()">Cancelar</button>
+                <button class="btn-primary" onclick="savePlannedDate()">Salvar Previsão</button>
+            </div>
         </div>
     </div>
 

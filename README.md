@@ -72,5 +72,48 @@ Os dados são salvos no Firebase e a aplicação pode ser hospedada no GitHub Pa
 
 *   Abra o link do GitHub Pages.
 *   Digite o nome do lugar e uma descrição.
-*   Clique em "Adicionar Lugar".
+*   Opcionalmente, defina uma data planejada de visita.
+*   **Novo:** Marque "Mostrar clima atual" para ver informações meteorológicas do destino.
+*   Se já visitaram, marque como visitado e use o medidor visual para avaliar.
+*   Clique em "Adicionar Destino".
 *   O lugar aparecerá na lista e será salvo no Firebase, acessível para quem tiver o link.
+
+## Funcionalidades
+
+### 🗺️ Gerenciamento de Destinos
+- Adicionar destinos com nome, descrição e data planejada
+- Marcar destinos como visitados
+- Sistema de avaliação visual (0-10) com emojis dinâmicos
+- Reviews textuais das experiências
+
+### 🌤️ Informações Meteorológicas
+- Clima atual dos destinos (temperatura, descrição, umidade, vento)
+- Integração com OpenWeatherMap API
+- Exibição de ícones climáticos intuitivos
+- Informações salvas junto com cada destino
+
+### 📱 Interface Moderna
+- Design responsivo para mobile e desktop
+- Medidor visual interativo para avaliações
+- Modal elegante para edição de avaliações
+- Animações e feedback visual
+
+### 🔧 Configuração de Clima
+
+Para usar a funcionalidade completa de clima:
+
+1. **Obter API Key Gratuita:**
+   - Visite [OpenWeatherMap](https://openweathermap.org/api)
+   - Crie uma conta gratuita
+   - Obtenha sua API key
+
+2. **Configurar na Aplicação:**
+   - Clique em "Configurar API Key" na aplicação
+   - Cole sua chave de API
+   - A configuração fica salva no navegador
+
+3. **Limite Gratuito:**
+   - 1.000 chamadas por dia
+   - Mais que suficiente para uso pessoal
+
+**Nota:** A aplicação inclui uma chave demo para demonstração, mas é limitada. Para uso completo, configure sua própria chave gratuita.
